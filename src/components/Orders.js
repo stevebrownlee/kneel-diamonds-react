@@ -6,7 +6,6 @@ const buildOrderListItem = (order) => {
     const sizes = getSizes()
     const styles = getStyles()
 
-    // TODO: Expand and embed features of API for Explorer chapter
     const metalPrice = metals.find(m => m.id === order.metalId).price
     const sizePrice = sizes.find(s => s.id === order.sizeId).price
     const stylePrice = styles.find(st => st.id === order.styleId).price

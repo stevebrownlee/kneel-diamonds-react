@@ -1,8 +1,5 @@
 const database = {
-    orderBuilder: {
-
-    },
-    type: "ring",
+    orderBuilder: { },
     styles: [
         { id: 1, style: "Classic", price: 500 },
         { id: 2, style: "Modern", price: 710 },
@@ -60,11 +57,11 @@ export const addCustomOrder = () => {
     const newOrder = {...database.orderBuilder}
     newOrder.timestamp = Date.now()
     newOrder.id = [...database.customOrders].pop().id + 1
-    newOrder.type = database.type
     database.customOrders.push(newOrder)
 
     database.orderBuilder = {}
-    database.type = "ring"
+
+    console.log(database.customOrders)
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
